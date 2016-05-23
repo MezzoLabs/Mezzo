@@ -1,0 +1,1 @@
+<mezzo-file-picker file-type="image" field-name="{{ $renderer->name() }}" multiple></mezzo-file-picker>

@@ -1,0 +1,1 @@
+@extends('cockpit::pages.layouts.create_or_edit')

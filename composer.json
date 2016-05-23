@@ -1,0 +1,54 @@
+{
+  "name": "mezzolabs/mezzo",
+  "description": "Mezzo - mix your content with a sexy backend.",
+  "license": "proprietary",
+  "keywords": [
+    "laravel",
+    "mezzo",
+    "cms",
+    "cmf",
+    "admin",
+    "acp",
+    "generator"
+  ],
+  "homepage": "https://github.com/MezzoLabs/Mezzo",
+  "authors": [
+    {
+      "name": "Simon Schneider, Marc Vornetran",
+      "email": "mail@mezzolabs.io",
+      "homepage": "http://mezzolabs.io",
+      "role": "Developers"
+    }
+  ],
+  "require": {
+    "illuminate/support": "~5.1",
+    "php": ">=7.0.0",
+    "dingo/api": "0.9.*",
+    "barryvdh/laravel-ide-helper": "^2.0@dev",
+    "tymon/jwt-auth": "0.5.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.*",
+    "scrutinizer/ocular": "~1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mezzolabs\\Mezzo\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MezzoLabs\\Mezzo\\Test\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "phpunit"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev"
+}

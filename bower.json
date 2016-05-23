@@ -1,0 +1,39 @@
+{
+  "name": "Mezzo",
+  "version": "0.0.1",
+  "homepage": "https://github.com/MezzoLabs/CockpitDemo",
+  "description": "Bower file for the backend of Mezzo",
+  "license": "",
+  "dependencies": {
+    "angular": "~1.4.4",
+    "angular-sortable-view": "~0.0.13",
+    "angular-ui-router": "~0.2.15",
+    "animate.css": "~3.4.0",
+    "awesome-bootstrap-checkbox": "~0.3.5",
+    "bootstrap-datepicker": "~1.4.0",
+    "bootstrap-sass": "3.x",
+    "font-awesome": "4.x",
+    "jquery.maskedinput": "~1.4.1",
+    "lodash": "~3.10.1",
+    "select2": "~4.0.0",
+    "x-editable": "~1.5.1",
+    "jstree": "~3.2.1",
+    "jstree-bootstrap-theme": "~1.0.1",
+    "chosen": "~1.4.2",
+    "pluralize": "~1.2.1",
+    "sweetalert2": "~0.2.3",
+    "jquery-ui": "jqueryui#~1.11.4",
+    "ng-file-upload": "~9.0.13"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "jstree": "~3.2.1"
+  }
+}
