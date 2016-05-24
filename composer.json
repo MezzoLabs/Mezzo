@@ -25,7 +25,8 @@
     "php": ">=7.0.0",
     "dingo/api": "0.9.*",
     "barryvdh/laravel-ide-helper": "^2.0@dev",
-    "tymon/jwt-auth": "0.5.*"
+    "tymon/jwt-auth": "0.5.*",
+    "doctrine/dbal": "^2.5"
   },
   "require-dev": {
     "phpunit/phpunit": "4.*",

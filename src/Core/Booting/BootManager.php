@@ -20,6 +20,7 @@ use MezzoLabs\Mezzo\Core\Booting\Bootstrappers\RegisterModuleProviders;
 use MezzoLabs\Mezzo\Core\Booting\Bootstrappers\RegisterTransformers;
 use MezzoLabs\Mezzo\Core\Booting\Bootstrappers\RunThirdPartyWrappers;
 use MezzoLabs\Mezzo\Core\Booting\Bootstrappers\SetEloquentDispatcher;
+use MezzoLabs\Mezzo\Core\Helpers\DebugService;
 use MezzoLabs\Mezzo\Core\Mezzo;
 
 class BootManager
@@ -80,6 +81,11 @@ class BootManager
         ]
     ];
 
+    /**
+     * @var DebugService
+     */
+    protected $debugService;
+
 
     /**
      * @param Mezzo $mezzo
@@ -89,6 +95,7 @@ class BootManager
     {
         $this->mezzo = $mezzo;
         $this->app = $mezzo->app();
+        $this->debugService = app(DebugService::class);
     }
 
     /**
@@ -132,12 +139,12 @@ class BootManager
             event('bootstrapping: ' . $bootstrapper, [$this->app]);
 
             if ($this->debug)
-                \Debugbar::startMeasure($bootstrapper, $bootstrapper);
+                $this->debugService->startMeasure($bootstrapper, $bootstrapper);
 
             $this->app->make($bootstrapper)->bootstrap($this->mezzo);
 
             if ($this->debug)
-                \Debugbar::stopMeasure($bootstrapper);
+                $this->debugService->stopMeasure($bootstrapper);
 
 
             event('bootstrapped: ' . $bootstrapper, [$this->app]);

@@ -26,6 +26,8 @@ class MezzoServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->autoloadVendorFolder();
+
         $this->mezzo = require __DIR__ . '/../bootstrap/mezzo.php';
 
         $this->mezzo->serviceProvider = $this;
@@ -43,6 +45,18 @@ class MezzoServiceProvider extends ServiceProvider
         $this->mezzo->onProviderBooted();
     }
 
+    /**
+     * Loads the dependency if mezzo is inside a "workbench" environment.
+     * Third parties are loaded from the autoload.php.
+     */
+    protected function autoloadVendorFolder()
+    {
+        if (!file_exists( __DIR__ . '/../vendor/autoload.php')) {
+            return;
+        }
+
+        require __DIR__ . '/../vendor/autoload.php';
+    }
 
     /**
      * Merge config from application with the one in the config folder.

@@ -5,6 +5,7 @@ namespace MezzoLabs\Mezzo\Http\Format;
 
 use Dingo\Api\Http\Response\Format\Json as DingoJsonFormat;
 use Illuminate\Support\Collection;
+use MezzoLabs\Mezzo\Core\Helpers\DebugService;
 
 class Json extends DingoJsonFormat
 {
@@ -19,9 +20,9 @@ class Json extends DingoJsonFormat
     protected function debugData(){
         $data = new Collection();
 
-        $debugbar = app('debugbar');
+        $debugService = app(DebugService::class);
 
-        $data->put('queries', $debugbar->getCollector('queries')->collect());
+        $data->put('queries', $debugService->getQueries());
 
         return $data->toArray();
     }
