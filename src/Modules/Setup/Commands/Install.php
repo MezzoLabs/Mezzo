@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MezzoLabs\Mezzo\Modules\Installer\Setup;
+namespace MezzoLabs\Mezzo\Modules\Setup\Commands;
 
 
 use CategoryTableSeeder;
@@ -46,7 +46,9 @@ class Install extends MezzoCommand
     /**
      * Create a new command instance.
      *
-     * @return \MezzoLabs\Mezzo\Modules\Generator\Commands\GenerateForeignFields
+     * @param SeedPermissions $seedPermissions
+     * @param UserRepository $users
+     * @param Seeder $databaseSeeder
      */
     public function __construct(SeedPermissions $seedPermissions, UserRepository $users, Seeder $databaseSeeder)
     {

@@ -5,7 +5,7 @@ namespace MezzoLabs\Mezzo\Modules\Setup;
 
 
 use MezzoLabs\Mezzo\Core\Modularisation\ModuleProvider;
-use MezzoLabs\Mezzo\Modules\Installer\Setup\Install;
+use MezzoLabs\Mezzo\Modules\Setup\Commands\Install;
 
 class SetupModule extends ModuleProvider
 {

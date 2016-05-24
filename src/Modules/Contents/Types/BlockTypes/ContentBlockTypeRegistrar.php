@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MezzoLabs\Mezzo\Modules\Contents\Types\BlockTypes;
-
 
 use MezzoLabs\Mezzo\Core\Helpers\Parameter;
 use MezzoLabs\Mezzo\Modules\Contents\Contracts\ContentBlockTypeContract;
