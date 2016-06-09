@@ -6,7 +6,7 @@ namespace MezzoLabs\Mezzo\Modules\Addresses\Domain\Models;
 
 use App\Mezzo\Generated\ModelParents\MezzoAddress;
 
-class Address extends MezzoAddress
+abstract class Address extends MezzoAddress
 {
     public function firstName()
     {

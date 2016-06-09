@@ -22,6 +22,7 @@ class ThirdParties extends Collection
         'UniqueWithValidator' => Wrappers\UniqueWithValidator::class
     ];
 
+
     /**
      * A Collection of the reflections
      *

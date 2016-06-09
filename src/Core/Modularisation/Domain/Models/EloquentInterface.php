@@ -15,13 +15,6 @@ interface EloquentInterface
      */
     public static function clearBootedModels();
 
-    /**
-     * Register a new global scope on the model.
-     *
-     * @param  \Illuminate\Database\Eloquent\ScopeInterface $scope
-     * @return void
-     */
-    public static function addGlobalScope(ScopeInterface $scope);
 
     /**
      * Determine if a model has a global scope.
@@ -342,13 +335,6 @@ interface EloquentInterface
      */
     public function newFromBuilder($attributes = [], $connection = null);
 
-    /**
-     * Reload a fresh model instance from the database.
-     *
-     * @param  array $with
-     * @return $this|null
-     */
-    public function fresh(array $with = []);
 
     /**
      * Eager load relations on the model.
@@ -655,21 +641,6 @@ interface EloquentInterface
      */
     public function newQueryWithoutScopes();
 
-    /**
-     * Apply all of the global scopes to an Eloquent builder.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder $builder
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function applyGlobalScopes($builder);
-
-    /**
-     * Remove all of the global scopes from an Eloquent builder.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder $builder
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function removeGlobalScopes($builder);
 
     /**
      * Create a new Eloquent query builder for the model.

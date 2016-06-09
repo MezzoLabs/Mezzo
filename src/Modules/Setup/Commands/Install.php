@@ -50,12 +50,13 @@ class Install extends MezzoCommand
      * @param UserRepository $users
      * @param Seeder $databaseSeeder
      */
-    public function __construct(SeedPermissions $seedPermissions, UserRepository $users, Seeder $databaseSeeder)
+    public function __construct(SeedPermissions $seedPermissions, UserRepository $users)
     {
         parent::__construct();
         $this->seedPermissions = $seedPermissions;
         $this->users = $users;
-        $this->databaseSeeder = $databaseSeeder;
+
+      //  $this->databaseSeeder = $databaseSeeder;
     }
 
     /**

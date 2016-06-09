@@ -5,16 +5,15 @@ namespace MezzoLabs\Mezzo\Modules\Posts\Domain\Models;
 
 
 use App\Mezzo\Generated\ModelParents\MezzoPost;
-use App\User;
 use Carbon\Carbon;
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Cviebrock\EloquentSluggable\Sluggable as SluggableTrait;
 use Illuminate\Database\Eloquent\Builder;
+use MezzoLabs\Mezzo\Core\ThirdParties\Sluggable\DefaultSluggableTrait;
 
 
-abstract class Post extends MezzoPost implements SluggableInterface
+abstract class Post extends MezzoPost
 {
-    use SluggableTrait;
+    use SluggableTrait, DefaultSluggableTrait;
 
     protected $sluggable = [
         'build_from' => 'title',

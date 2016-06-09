@@ -4,7 +4,7 @@
 namespace MezzoLabs\Mezzo\Core\ThirdParties\Wrappers;
 
 
-use Cviebrock\EloquentSluggable\SluggableServiceProvider;
+use Cviebrock\EloquentSluggable\ServiceProvider as SluggableServiceProvider;
 
 class EloquentSluggable extends ThirdPartyWrapper
 {

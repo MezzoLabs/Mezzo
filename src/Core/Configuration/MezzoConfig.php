@@ -93,7 +93,11 @@ class MezzoConfig
         $weakSettings = $this->repository->get($weakKey);
         $strongSettings = $this->repository->get($strongKey);
 
-        $overwrittenSettings = array_merge($weakSettings, $strongSettings);
+        $overwrittenSettings = $strongSettings;
+
+        if(!empty($weakSettings)) {
+            $overwrittenSettings = array_merge($weakSettings, $strongSettings);
+        }
 
         $this->repository->set($weakKey, $overwrittenSettings);
 

@@ -1,26 +1,20 @@
 <?php
 
-
-namespace MezzoLabs\Mezzo\Modules\Categories\Models;
+namespace MezzoLabs\Mezzo\Modules\Categories\Domain\Models;
 
 
 use App\CategoryGroup as AppCategoryGroup;
 use App\Mezzo\Generated\ModelParents\MezzoCategory;
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Cviebrock\EloquentSluggable\Sluggable as SluggableTrait;
+use MezzoLabs\Mezzo\Core\ThirdParties\Sluggable\DefaultSluggableTrait;
 use MezzoLabs\Mezzo\Exceptions\InvalidArgumentException;
 use MezzoLabs\Mezzo\Modules\Categories\Domain\Repositories\CategoryGroupRepository;
 use MezzoLabs\Mezzo\Modules\Categories\Domain\Repositories\CategoryRepository;
 use MezzoLabs\Mezzo\Modules\Categories\Exceptions\CannotFindCategoryException;
 
-abstract class Category extends MezzoCategory implements SluggableInterface
+abstract class Category extends MezzoCategory
 {
-    use SluggableTrait;
-
-    protected $sluggable = [
-        'build_from' => 'label',
-        'save_to' => 'slug',
-    ];
+    use SluggableTrait, DefaultSluggableTrait;
 
 
     /**
